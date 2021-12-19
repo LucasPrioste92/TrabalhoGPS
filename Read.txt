@@ -1,0 +1,12 @@
+Criar uma base de dados, criem com o nome UnitedCalendar
+Clicam com o lado direito em cima da base de dados, opção new query e fazem copy paste do ficheiro sql
+
+Depois clicam no nome da Db, no canto inferior direito vou ter muitas propriedades, encontrei o connection string e copiem.
+
+Depois vão ao appsettings.json e adicionem esse codigo logo no inicio
+	"ConnectionStrings": {
+    "LocalDB": "connectionstring"
+  },
+
+
+Em principio já funciona
