@@ -1,0 +1,38 @@
+﻿@using UnitedCalendar.ViewModels
+@model ManageUsersInRoleViewModel
+
+@{
+    ViewData["Title"] = "Gerir Utilizadores " + Model.RoleName;
+    var roleId = ViewBag.roleId;
+}
+
+<h1>Gerir Utilizadores no role @Model.RoleName</h1>
+<p>
+    Lista de Utilizadores
+</p>
+
+<div class="row">
+    <a class="btn btn-info" asp-action="EditUsersInRole" asp-route-roleId="@Model.Id" >Editar Utilizadores No Role</a>
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Users)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Users) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
