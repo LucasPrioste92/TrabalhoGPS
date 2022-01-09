@@ -10,7 +10,8 @@ namespace UnitedCalendar.Models
         [Required(ErrorMessage = "O Nome do Curso é um campo Obrigatório.")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "O Nome da Faculdade é um campo Obrigatório.")]
-        public string Faculdade { get; set; }
+        [Required(ErrorMessage = "A faculdade é um campo Obrigatório.")]
+        public int IdFaculdade { get; set; }
+        public virtual Faculdade Faculdade { get; set; } //Fk Curso
     }
 }

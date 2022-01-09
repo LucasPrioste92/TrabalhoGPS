@@ -472,3 +472,8 @@ C:\Users\Lucas\Desktop\FACULDADE\3ºano\1ºSemestre\GPS\Trabalho_GPS_Final\Unite
 C:\Users\Lucas\Desktop\FACULDADE\3ºano\1ºSemestre\GPS\Trabalho_GPS_Final\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\Razor\Views\Admin\EditUsersInRole.cshtml.g.cs
 C:\Users\Lucas\Desktop\FACULDADE\3ºano\1ºSemestre\GPS\Trabalho_GPS_Final\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
 C:\Users\Lucas\Desktop\FACULDADE\3ºano\1ºSemestre\GPS\Trabalho_GPS_Final\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ManageUsersInRole.cshtml.g.cs
+C:\Users\Lucas\Desktop\FACULDADE\3ºano\1ºSemestre\GPS\Trabalho_GPS_Final\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\Razor\Views\Faculdades\Create.cshtml.g.cs
+C:\Users\Lucas\Desktop\FACULDADE\3ºano\1ºSemestre\GPS\Trabalho_GPS_Final\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\Razor\Views\Faculdades\Delete.cshtml.g.cs
+C:\Users\Lucas\Desktop\FACULDADE\3ºano\1ºSemestre\GPS\Trabalho_GPS_Final\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\Razor\Views\Faculdades\Details.cshtml.g.cs
+C:\Users\Lucas\Desktop\FACULDADE\3ºano\1ºSemestre\GPS\Trabalho_GPS_Final\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\Razor\Views\Faculdades\Edit.cshtml.g.cs
+C:\Users\Lucas\Desktop\FACULDADE\3ºano\1ºSemestre\GPS\Trabalho_GPS_Final\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\Razor\Views\Faculdades\Index.cshtml.g.cs

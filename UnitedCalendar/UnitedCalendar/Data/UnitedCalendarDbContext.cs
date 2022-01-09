@@ -16,5 +16,6 @@ namespace UnitedCalendar.Data
         public DbSet<HorarioDisciplina> HorarioDisciplina { get; set; }
         public DbSet<Gabinete> Gabinete { get; set; }
         public DbSet<AtividadeExtra> AtividadeExtra { get; set; }
+        public DbSet<Faculdade> Faculdade { get; set; }
     }
 }

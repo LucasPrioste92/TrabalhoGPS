@@ -127,15 +127,19 @@ namespace UnitedCalendar.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Faculdade")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("FaculdadeIdFaculdade")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdFaculdade")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdCurso");
+
+                    b.HasIndex("FaculdadeIdFaculdade");
 
                     b.ToTable("Curso");
                 });
@@ -182,6 +186,22 @@ namespace UnitedCalendar.Migrations
                     b.HasIndex("CursoIdCurso");
 
                     b.ToTable("Disciplina");
+                });
+
+            modelBuilder.Entity("UnitedCalendar.Models.Faculdade", b =>
+                {
+                    b.Property<int>("IdFaculdade")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdFaculdade");
+
+                    b.ToTable("Faculdade");
                 });
 
             modelBuilder.Entity("UnitedCalendar.Models.Gabinete", b =>
@@ -288,6 +308,13 @@ namespace UnitedCalendar.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("UnitedCalendar.Models.Curso", b =>
+                {
+                    b.HasOne("UnitedCalendar.Models.Faculdade", "Faculdade")
+                        .WithMany()
+                        .HasForeignKey("FaculdadeIdFaculdade");
                 });
 
             modelBuilder.Entity("UnitedCalendar.Models.Disciplina", b =>
