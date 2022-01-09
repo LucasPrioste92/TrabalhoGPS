@@ -8,7 +8,7 @@ namespace UnitedCalendar.Models
         public int IdGabinete { get; set; }
 
         [Required(ErrorMessage = "O Nome do Gabinete é um campo Obrigatório.")]
-        public string Nome { get; set; }
+        public string Nome { get; set; }      
 
         [Required(ErrorMessage = "A Descricao do Gabinete é um campo Obrigatório.")]
         public string Descricao { get; set; }

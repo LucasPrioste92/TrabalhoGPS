@@ -103,15 +103,12 @@ namespace UnitedCalendar.Migrations
                     b.Property<int>("IdHorario")
                         .HasColumnType("int");
 
-                    b.Property<string>("IdUser")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("IdAtividadeExtra");
@@ -129,6 +126,10 @@ namespace UnitedCalendar.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Faculdade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -212,10 +213,6 @@ namespace UnitedCalendar.Migrations
                     b.Property<int>("IdHorario")
                         .HasColumnType("int");
 
-                    b.Property<string>("IdUser")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Local")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -225,6 +222,7 @@ namespace UnitedCalendar.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("IdGabinete");
@@ -287,7 +285,9 @@ namespace UnitedCalendar.Migrations
 
                     b.HasOne("UnitedCalendar.Models.ApplicationUser", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("UnitedCalendar.Models.Disciplina", b =>
@@ -305,7 +305,9 @@ namespace UnitedCalendar.Migrations
 
                     b.HasOne("UnitedCalendar.Models.ApplicationUser", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("UnitedCalendar.Models.Horario", b =>
