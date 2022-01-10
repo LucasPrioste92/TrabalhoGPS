@@ -1,0 +1,46 @@
+﻿@using UnitedCalendar.ViewModels
+@model HorarioGestaoViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Horário do @Model.User.Nome</h1>
+
+@if (Model.User.CursoIdCurso == null) { 
+    <a asp-action="AdicionarCurso" asp-route-id="@Model.User.Id">Curso Pendente</a>
+}else{
+    <h3>Curso: @Model.User.Curso.Nome</h3>
+}
+
+@if (Model.Horario.Publico) { 
+    <h3>Visibilidade: Publico</h3>
+}else{
+    <h3>Visibilidade: Privado</h3>
+}
+<a asp-action="HorarioVisibilidade" asp-route-id="@Model.Horario.IdHorario">Mudar Visibilidade</a>
+<hr/>
+<h3>Disciplinas no Horário:</h3>
+@foreach (var item in Model.Disciplinas) {
+            <p>@item.Nome | @item.DiaSemana: [@item.HoraComeco até @item.HoraTermino]</p>
+    }
+<a asp-action="GerirDisciplinas" asp-route-id="@Model.Horario.IdHorario">Gerir Disciplinas</a>
+<hr/>
+
+<h3>Atividades Extras no Horário:</h3>
+@foreach (var item in Model.AtividadeExtras) {
+            <p>@item.Nome | @item.DiaSemana: [@item.HoraComeco até @item.HoraTermino]</p>
+    }
+<a asp-controller="AtividadeExtras" asp-action="Index">Gerir Atividades Extras</a>
+<hr/>
+
+@if (User.IsInRole("Professor"))
+{
+    <h3>Horarios de Gabinete no Horário:</h3>
+    @foreach (var item in Model.Gabinetes) {
+            <p>@item.Nome | @item.DiaSemana: [@item.HoraComeco até @item.HoraTermino]</p>
+    }
+    <a asp-controller="Gabinetes" asp-action="Index">Gerir Gabinetes</a>
+}
+
+

@@ -29,6 +29,45 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Administração</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Cursos" asp-action="Index">Cursos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Faculdades" asp-action="Index">Faculdades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Disciplinas" asp-action="Index">Disciplinas</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Professor")){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AtividadeExtras" asp-action="Index">Atividades Extra</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Horarios" asp-action="Index">Horários</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Gabinetes" asp-action="Index">Gabinetes</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Estudante")){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AtividadeExtras" asp-action="Index">Atividades Extra</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Horarios" asp-action="Index">Horários</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Funcionario")){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Cursos" asp-action="Index">Cursos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Faculdades" asp-action="Index">Faculdades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Disciplinas" asp-action="Index">Disciplinas</a>
+                            </li>
                         }
                     </ul>
                 </div>

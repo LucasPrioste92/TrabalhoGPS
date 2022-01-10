@@ -1,0 +1,28 @@
+﻿@using UnitedCalendar.ViewModels
+@model List<AdicionarDisciplinaViewModel>
+
+@{
+    ViewData["Title"] = "Gestão Disciplinas";
+}
+
+<h1>Gestão Disciplinas No Horário</h1>
+
+<form method="post">
+        
+        @for(int i=0; i<Model.Count;i++){
+            <div class="row">
+                <div class="form-check col-6">
+
+                    <input type="hidden" asp-for="@Model[i].Disc.IdDisciplina" />
+                    <input type="hidden" asp-for="@Model[i].Disc.Nome" />
+
+                    <input asp-for="@Model[i].IsSelected" class="form-check-input" />
+                    <label asp-for="@Model[i].IsSelected" class="form-check-label"> @Model[i].Disc.Nome [@Model[i].Disc.HoraComeco | @Model[i].Disc.HoraTermino]</label>
+                </div>
+            </div>
+        }
+        <div class="row">
+            <input type="submit" value="Atualizar" class="btn btn-danger" />
+            <a asp-action="Index"  class="btn btn-primary">Voltar</a>
+        </div>
+</form>

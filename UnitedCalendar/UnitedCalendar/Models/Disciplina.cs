@@ -30,7 +30,7 @@ namespace UnitedCalendar.Models
 
 
         [Required(ErrorMessage = "O Curso é um campo Obrigatório.")]
-        public int IdCurso { get; set; }
+        public int CursoIdCurso { get; set; }
         public virtual Curso Curso { get; set; } //Fk Curso
 
         public ICollection<HorarioDisciplina> HorarioDisciplina { get; set; } //Uma Disciplina tem varios horarios, e um horario tem várias disciplinas

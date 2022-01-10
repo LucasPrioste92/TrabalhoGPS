@@ -23,7 +23,7 @@ namespace UnitedCalendar.Models
 
 
         [Required(ErrorMessage = "O Horario é um campo Obrigatório.")]
-        public int IdHorario { get; set; }
+        public int HorarioIdHorario { get; set; }
         public virtual Horario Horario { get; set; } //Fk Horario
 
         [Required(ErrorMessage = "O Utilizador é um campo Obrigatório.")]

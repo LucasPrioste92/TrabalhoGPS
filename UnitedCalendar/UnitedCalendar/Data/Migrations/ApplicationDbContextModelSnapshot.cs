@@ -15,7 +15,7 @@ namespace UnitedCalendar.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.20")
+                .HasAnnotation("ProductVersion", "3.1.21")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -166,6 +166,9 @@ namespace UnitedCalendar.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("CursoIdCurso")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
@@ -215,6 +218,8 @@ namespace UnitedCalendar.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CursoIdCurso");
+
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
 
@@ -224,6 +229,43 @@ namespace UnitedCalendar.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("UnitedCalendar.Models.Curso", b =>
+                {
+                    b.Property<int>("IdCurso")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("FaculdadeIdFaculdade")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdCurso");
+
+                    b.HasIndex("FaculdadeIdFaculdade");
+
+                    b.ToTable("Curso");
+                });
+
+            modelBuilder.Entity("UnitedCalendar.Models.Faculdade", b =>
+                {
+                    b.Property<int>("IdFaculdade")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdFaculdade");
+
+                    b.ToTable("Faculdade");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -273,6 +315,22 @@ namespace UnitedCalendar.Data.Migrations
                     b.HasOne("UnitedCalendar.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("UnitedCalendar.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("UnitedCalendar.Models.Curso", "Curso")
+                        .WithMany()
+                        .HasForeignKey("CursoIdCurso");
+                });
+
+            modelBuilder.Entity("UnitedCalendar.Models.Curso", b =>
+                {
+                    b.HasOne("UnitedCalendar.Models.Faculdade", "Faculdade")
+                        .WithMany()
+                        .HasForeignKey("FaculdadeIdFaculdade")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
