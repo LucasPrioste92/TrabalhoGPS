@@ -20,16 +20,54 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link"  asp-controller="Home" asp-action="Index">Home</a>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Team</a>
-                        </li>
+                        @if (User.IsInRole("Admins")){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Administração</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Cursos" asp-action="Index">Cursos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Faculdades" asp-action="Index">Faculdades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Disciplinas" asp-action="Index">Disciplinas</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Professor")){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AtividadeExtras" asp-action="Index">Atividades Extra</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Horarios" asp-action="Index">Horários</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Gabinetes" asp-action="Index">Gabinetes</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Estudante")){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AtividadeExtras" asp-action="Index">Atividades Extra</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Horarios" asp-action="Index">Horários</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Funcionario")){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Cursos" asp-action="Index">Cursos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Faculdades" asp-action="Index">Faculdades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Disciplinas" asp-action="Index">Disciplinas</a>
+                            </li>
+                        }
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <partial name="_LoginPartial.cshtml" />

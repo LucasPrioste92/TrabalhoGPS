@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XxU723c8E1qoPydmams1tay8kd5EuLGmGzjyzCDFTcxnhyz8fHx1bO5s/h0Sy+CHI7EWZtuPmA0XHzKyoGPcsA==",
+  "dgSpecHash": "UYYN+nVU6UofHS7SbgcG0Pf7Vx3fLIGGMDL8CyqFu9qRjfmisN0ct4UPM0raOvGJIWOgN2DASmme2ymrwm628g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lucas\\Desktop\\FACULDADE\\3ºano\\1ºSemestre\\GPS\\Trabalho_GPS_Final\\UnitedCalendar\\UnitedCalendar\\UnitedCalendar.csproj",
+  "projectFilePath": "C:\\Users\\Lucas\\Desktop\\FACULDADE\\3ºano\\1ºSemestre\\GPS\\Trabalho_GPS_Final\\GIT\\UnitedCalendar\\UnitedCalendar\\UnitedCalendar.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.21\\microsoft.aspnetcore.cryptography.internal.3.1.21.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.21\\microsoft.aspnetcore.cryptography.keyderivation.3.1.21.nupkg.sha512",
