@@ -1,8 +1,228 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div id="slides" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#slides" data-slide-to="0" class="active"></li>
+        <li data-target="#slides" data-slide-to="1"></li>
+        <li data-target="#slides" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/img/i2.jpg" />
+            <div class="carousel-caption">
+                <h1 class="display-2">UnitedCalendar</h1>
+                <h3>Queres fazer os teus horários?</h3>
+                <button type="button" class="btn btn-outline-light btn-lg">Começa Aqui</button>
+            </div>
+
+        </div>
+        <div class="carousel-item">
+            <img src="~/img/i3.jpg" />
+        </div>
+        <div class="carousel-item">
+            <img src="~/img/image1.jpeg" />
+        </div>
+    </div>
 </div>
+
+
+<div class="container-fluid padding">
+    <div class="row welcome text-center">
+        <div class="col-12">
+            <h1 class="display-4">Bem-vindo ao UnitedCalendar</h1>
+        </div>
+        <hr />
+        <div class="col-12">
+            <p class="lead">
+                Este Website foi construido no âmbito da cadeira de Gestão e Projeto de Software e
+                tem como objetivo proporcionar aos estudantes uma melhor organização das suas
+                tarefas através da criação de horários.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid padding">
+    <div class="row text-center padding">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Asp.Net Core</h3>
+            <p>Construido com a versão 3.0 do Asp.Net Core</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <i class="fas fa-bold"></i>
+            <h3>Bootstrap</h3>
+            <p>Construido com a ultima versão do Bootstrap</p>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <i class="fas fa-laptop"></i>
+            <h3>Linguagem C#</h3>
+            <p>Construido utilizando a linguagem C#</p>
+        </div>
+    </div>
+    <hr class="my-4" />
+</div>
+
+<div class="container-fluid padding">
+    <div class="row welcome text-center">
+        <div class="col-12">
+            <h1 class="display-4">Conhece a Equipa</h1>
+        </div>
+        <hr />
+    </div>
+</div>
+
+
+<div class="container-fluid padding margin-cards">
+    <div class="row padding">
+        <div class="col-md-4" style="padding-bottom:12px">
+            <div class="card">
+                <img class="card-img-top" src="~/img/team1.jpg" />
+                <div class="card-body">
+                    <h4 class="card-title">Lucas Prioste</h4>
+                    <p class="card-text">Lucas é um estudante de Engenharia Informática e foi o Project Manager(PM) deste projeto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="padding-bottom:12px">
+            <div class="card">
+                <img class="card-img-top" src="~/img/team2.jpg" />
+                <div class="card-body">
+                    <h4 class="card-title">Bernardo Gomes</h4>
+                    <p class="card-text">Bernardo é um estudante de Engenharia Informática e foi o Technical Manager(TM) deste projeto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="padding-bottom:12px">
+            <div class="card">
+                <img class="card-img-top" src="~/img/team3.jpg" />
+                <div class="card-body">
+                    <h4 class="card-title">Daniel Pereira</h4>
+                    <p class="card-text">Daniel é um estudante de Engenharia Informática e foi o Quality Manager(QM) deste projeto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="~/img/team4.jpg" />
+                <div class="card-body">
+                    <h4 class="card-title">André Pascoa</h4>
+                    <p class="card-text">André é um estudante de Engenharia Informática e foi o Risk Manager(RM) deste projeto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="~/img/rafael.jpg" />
+                <div class="card-body">
+                    <h4 class="card-title">Rafael Fonseca</h4>
+                    <p class="card-text">Rafael é um estudante de Engenharia Informática e foi o Client Manager(CM) deste projeto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="~/img/team6.jpg" />
+                <div class="card-body">
+                    <h4 class="card-title">José Diogo</h4>
+                    <p class="card-text">José é um estudante de Engenharia Informática e foi o Test Manager(TM) deste projeto.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<style>
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+        .carousel-caption h1 {
+            font-size: 500%;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 10px #000;
+        }
+
+        .carousel-caption h3 {
+            font-size: 200%;
+            font-weight: 500;
+            text-shadow: 1px 1px 10px #000;
+            padding-bottom: 1rem;
+        }
+
+    .btn-primary {
+        background-color: #6648b1;
+        border: 1px solid #563d7c;
+    }
+
+        .btn-primary:hover {
+            background-color: #563d7c;
+            border: 1px solid #563d7c;
+        }
+
+    .padding {
+        padding-bottom: 2rem;
+      
+    }
+
+    .welcome {
+        width: 75%;
+        margin: 0 auto;
+        padding-top: 2rem;
+    }
+
+        .welcome hr {
+            border-top: 2px solid #b4b4b4;
+            width: 95%;
+            margin-top: .3rem;
+            margin-bottom: 1rem;
+        }
+
+    .fa-bold {
+        color: #563d7c;
+    }
+
+    .fa-laptop {
+        color: grey;
+    }
+
+    .fa-calendar-alt {
+        color: deepskyblue;
+    }
+
+    .fa-bold, .fa-calendar-alt, .fa-laptop {
+        font-size: 4em;
+    }
+
+    .card {
+        padding: 8px 8px 8px 8px;
+        height: 100%;
+        width: 100%;
+    }
+
+        .card img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .margin-cards{
+            padding-left: 12rem;
+            padding-right: 12rem;
+        }
+</style>
