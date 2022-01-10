@@ -9,80 +9,71 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">UnitedCalendar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">About</a>
                         </li>
-                        @if (User.IsInRole("Admins")){
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Administração</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Cursos" asp-action="Index">Cursos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Faculdades" asp-action="Index">Faculdades</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Disciplinas" asp-action="Index">Disciplinas</a>
-                            </li>
-                        }
-                        @if (User.IsInRole("Professor")){
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="AtividadeExtras" asp-action="Index">Atividades Extra</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Horarios" asp-action="Index">Horários</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Gabinetes" asp-action="Index">Gabinetes</a>
-                            </li>
-                        }
-                        @if (User.IsInRole("Estudante")){
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="AtividadeExtras" asp-action="Index">Atividades Extra</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Horarios" asp-action="Index">Horários</a>
-                            </li>
-                        }
-                        @if (User.IsInRole("Funcionario")){
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Cursos" asp-action="Index">Cursos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Faculdades" asp-action="Index">Faculdades</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Disciplinas" asp-action="Index">Disciplinas</a>
-                            </li>
-                        }
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Team</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <partial name="_LoginPartial.cshtml" />
+
                     </ul>
                 </div>
             </div>
+
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - UnitedCalendar - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+    @RenderBody()
+
+
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="" />
+                    <hr class="light" />
+                    <p>555-555-5555</p>
+                    <p>email@isec.pt</p>
+                    <p>100 Street Name</p>
+                    <p>Coimbra, Vale das Flores, 00000</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light" />
+                    <h5>As nossas horas</h5>
+                    <hr class="light" />
+                    <p>Terça-Feira: 13h30-15h30</p>
+                    <p>Quarta-Feira: 18h-20h</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light" />
+                    <h5>As nossas horas</h5>
+                    <hr class="light" />
+                    <p>Terça-Feira: 13h30-15h30</p>
+                    <p>Quarta-Feira: 18h-20h</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light" />
+                    <h5>&copy: unitedcalendar.com</h5>
+                </div>
+            </div>
+
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -91,3 +82,49 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
+<style>
+
+    html, body {
+        height: 100%;
+        width: 100%;
+        font-family: 'Times New Roman';
+        color: #222;
+    }
+
+    .navbar {
+        padding: .8rem;
+    }
+
+    .navbar-nav li {
+        padding-right: 20px;
+    }
+
+    .nav-link {
+        font-size: 1.1em !important;
+    }
+
+    footer {
+        background-color: #3f3f3f;
+        color: #d5d5d5;
+        padding-top: 2rem;
+    }
+
+    hr.light {
+        border-top: 1px solid #d5d5d5;
+        width: 75%;
+        margin-top: .8rem;
+        margin-bottom: 1rem;
+    }
+
+    footer a {
+        color: #d5d5d5;
+    }
+
+    hr.light-100 {
+        border-top: 1px solid #d5d5d5;
+        width: 75%;
+        margin-top: .8rem;
+        margin-bottom: 1rem;
+    }
+</style>
