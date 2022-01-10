@@ -997,3 +997,4 @@ C:\Users\FNAC\Documents\GitHub\TrabalhoGPS\UnitedCalendar\UnitedCalendar\obj\Deb
 C:\Users\FNAC\Documents\GitHub\TrabalhoGPS\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\UnitedCalendar.RazorTargetAssemblyInfo.cs
 C:\Users\FNAC\Documents\GitHub\TrabalhoGPS\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\UnitedCalendar.Views.pdb
 C:\Users\FNAC\Documents\GitHub\TrabalhoGPS\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\UnitedCalendar.csproj.CopyComplete
+C:\Users\FNAC\Documents\GitHub\TrabalhoGPS\UnitedCalendar\UnitedCalendar\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AuthLayout.cshtml.g.cs
